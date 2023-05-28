@@ -1,7 +1,21 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
+    operation()
+}
+fun calculator(a: Double, b: Double, operator: Char): Double {
+    return when (operator) {
+        '+' -> a + b
+        '-' -> a - b
+        '*' -> a * b
+        '/' -> a / b
+        else -> throw IllegalArgumentException("Неподдерживаемый оператор: $operator")
+    }
+}
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun operation() {
+    val a = 10.0
+    val b = 5.0
+    val operator = '+'
+
+    val result = calculator(a, b, operator)
+    println("______________________Результат: $result")
 }
